@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Livro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/css/registrar_livros.css" />
+  </head>
+  <body>
+    <!-- Carrega as tags do Django Widget Tweaks para utilização -->
+    {% load widget_tweaks %}
+    <div class="bg-title">
+        <h1>Registre seu Livro</h1>
+    </div>
+    <div class="form-container">
+      <form method="post" action="{% url 'registrar_livros' %}">
+        <!-- Não se esqueça dessa tag -->
+        {% csrf_token %}
+
+        <!-- Nome -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Nome do Autor</span>
+          </div>
+          {% render_field form.nome_do_autor class="form-control" %}
+        </div>
+
+        <!-- Sobrenome -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Nome da Obra</span>
+          </div>
+          {% render_field form.nome_da_obra class="form-control" %}
+        </div>
+
+        <!-- CPF -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Categoria</span>
+          </div>
+          {% render_field form.categoria class="form-control" %}
+        </div>
+
+        <!-- Tempo de Serviço -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Data de Registro</span>
+          </div>
+          {% render_field form.data_de_registro class="form-control" %}
+        </div>
+
+        <!-- Remuneração -->
+        
+
+        <!-- Biografia -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Resumo</span>
+          </div>
+          {% render_field form.biografia class="form-control" %}
+        </div>
+        <hr />
+        <div class="text-right">
+          <a href="{% url 'index' %}" class="btn btn-outline-primary">Voltar</a>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
