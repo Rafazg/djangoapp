@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(242, 237, 237);
+}
+
+#layoutAuthentication
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+
+/* From https://css.glass */
+background: rgba(0, 39, 72, 0.17);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
+border: 1px solid rgba(0, 39, 72, 1);
+    
+}
+
+.container
+{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 430px;
+    border-left: 10px solid rgb(17, 17, 107);
+    border-right: 10px solid rgb(17, 17, 107);
+    border-radius: 15px;
+}
+.card-header
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.card-header h3
+{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Black Han Sans', sans-serif;
+}
+.card-header h4
+{
+    color: rgb(14, 1, 1);
+    font-size: 17px;
+    margin-left: 5px;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+
+.card-body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 160px;
+    padding: 20px;
+}
+
+.form-control
+{   
+    width: 320px;
+    margin-bottom: 30px;
+    height: 30px;
+    
+}
+
+.card-footer
+{
+    width: 100%;
+    height: 100%;
+    margin-left: -45px;
+    font-size: 25px;
+}
