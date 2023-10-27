@@ -30,7 +30,20 @@ SECRET_KEY = 'django-insecure-aa@=vttlsy5*we93smqahx^)0tgw5v==f9=dq=&b-@2&2y-ny&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
+
+# Define a URL de redirecionamento após o login bem-sucedido
+LOGIN_REDIRECT_URL = 'index'  # Pode ser a página que você deseja redirecionar após o login
+
+# Define a URL de login
+LOGIN_URL = 'login'  # Isso corresponde ao nome da sua view de login
+
+# Configuração do sistema de autenticação
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 
 # Application definition
@@ -86,7 +99,8 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://findbookdb_user:DooeZZqhYPdnHQPgSdzWtJ5VWJULRExH@dpg-ckg1tt8l3its73bm99dg-a.oregon-postgres.render.com/findbookdb")
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 # Password validation
