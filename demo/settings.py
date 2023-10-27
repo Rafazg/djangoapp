@@ -100,6 +100,10 @@ DATABASES = {
 }
 
 database_url = os.environ.get("DATABASE_URL")
+
+if isinstance(database_url, bytes):
+    database_url = database_url.decode("utf-8")
+
 DATABASES["default"] = dj_database_url.parse(database_url)
 
 
