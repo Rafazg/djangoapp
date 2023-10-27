@@ -32,7 +32,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'mybookapp.onrender.com']
 
 # Define a URL de redirecionamento após o login bem-sucedido
 LOGIN_REDIRECT_URL = 'index'  # Pode ser a página que você deseja redirecionar após o login
