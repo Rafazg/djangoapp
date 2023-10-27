@@ -6,6 +6,7 @@ from django.views import generic
 from django.contrib.auth import login, authenticate
 from .models import Employee, Livros
 from .forms import InsereLivroForm
+from .forms import RegistrationForm
 import requests
 
 # Create your views here.
@@ -27,10 +28,22 @@ class Login(View):
         else:
             return render(request, self.template, {'form': form})
         
-class Register(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'register.html'
+
+
+class Register(View):
+    def get(self, request):
+        # Lógica para lidar com solicitações GET, como exibir o formulário de registro.
+        form = RegistrationForm()
+        return render(request, "register.html", {"form": form})
+
+    def post(self, request):
+        # Lógica para lidar com solicitações POST, como processar o formulário de registro.
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")
+        else:
+            return render(request, "register.html", {"form": form})
      
 
 class Index(View):
