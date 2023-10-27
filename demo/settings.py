@@ -99,12 +99,8 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
 
-if isinstance(database_url, bytes):
-    database_url = database_url.decode("utf-8")
-
-DATABASES["default"] = dj_database_url.parse(database_url)
+DATABASES["default"] = dj_database_url.parse("postgres://findbookdb_user:DooeZZqhYPdnHQPgSdzWtJ5VWJULRExH@dpg-ckg1tt8l3its73bm99dg-a.oregon-postgres.render.com/findbookdb")
 
 
 # Password validation
