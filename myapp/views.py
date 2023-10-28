@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse, redirect
 from django.views import View
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
