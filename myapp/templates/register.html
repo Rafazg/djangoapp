@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/registerAccount.css' %}">
 </head>
 <body>
     <h2>Registro</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Registrar</button>
-    </form>
+    <div id="form-container">    
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
 </body>
 </html>
