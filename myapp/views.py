@@ -25,13 +25,14 @@ class Login(View):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/index/')
         else:
             return render(request, self.template, {'form': form})
         
 
 
 class Register(View):
+    template = 'register.html'
     def get(self, request):
         # Lógica para lidar com solicitações GET, como exibir o formulário de registro.
         form = RegistrationForm()
