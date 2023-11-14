@@ -11245,3 +11245,14 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
+
+.livros-encontrados-list {
+  list-style: none;
+  padding: 0;
+}
+
+.livro-item {
+  margin-top: 60px; 
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 10px; 
+}

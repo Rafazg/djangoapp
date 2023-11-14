@@ -12,6 +12,7 @@ body {
 
 
 #form-container{
+    border: 2px solid red;
     width: 80%;
 }
 
